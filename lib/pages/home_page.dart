@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:getx_dependency_injection/controller/user_controller.dart';
 import 'package:getx_dependency_injection/pages/data_screen.dart';
 
@@ -8,7 +9,7 @@ class HomePage extends StatelessWidget {
   final nameController = TextEditingController();
   final ageController = TextEditingController();
 
-  final userController = UserController();
+  final userController = Get.find<UserController>();
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +65,7 @@ class HomePage extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return const DataScreen();
+                      return DataScreen();
                     },
                   ),
                 );

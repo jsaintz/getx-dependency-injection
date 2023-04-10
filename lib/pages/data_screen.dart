@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:getx_dependency_injection/controller/user_controller.dart';
 
-class DataScreen extends StatelessWidget {
+class DataScreen extends GetView<UserController> {
   const DataScreen({
     Key? key,
   }) : super(key: key);
@@ -20,16 +22,17 @@ class DataScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Apresentação do nome
-            Text(
-              'Nome: ',
-              style: commonStyle(),
+            Obx(
+              () => Text(
+                'Nome: ${controller.user.value.name}',
+                style: commonStyle(),
+              ),
             ),
-
-            // Apresentação da idade
-            Text(
-              'idade: ',
-              style: commonStyle(),
+            Obx(
+              () => Text(
+                'idade: ${controller.user.value.age}',
+                style: commonStyle(),
+              ),
             ),
           ],
         ),
