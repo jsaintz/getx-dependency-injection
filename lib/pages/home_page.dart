@@ -62,13 +62,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return DataScreen();
-                    },
-                  ),
-                );
+                Get.to(const DataScreen());
               },
               child: const Text('Tela de dados'),
             ),
